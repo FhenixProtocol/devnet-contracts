@@ -57,12 +57,16 @@ contract EncryptedERC20 is EIP712WithModifier {
         return TFHE.reencrypt(totalSupply, publicKey);
     }
 
-    function balanceOf(        
+
+    // Returns the balance of the caller under their public FHE key.
+    // The FHE public key is automatically determined based on the origin of the call.
+    function balanceOf(
         bytes32 publicKey,
         bytes calldata signature
     )
         public
         view
+        onlySignedPublicKey(publicKey, signature)
         returns (bytes memory)
     {
         return TFHE.reencrypt(balances[msg.sender], publicKey);
