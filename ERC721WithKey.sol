@@ -10,7 +10,7 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.0/contr
 
 import "fhevm/lib/TFHE.sol";
 
-contract SecretNft is
+contract ERC721WithKey is
     ERC721
      {
 
