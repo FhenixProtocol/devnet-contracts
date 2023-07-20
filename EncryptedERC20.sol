@@ -2,7 +2,7 @@
 
 pragma solidity >=0.8.13 <0.9.0;
 
-import "./EIP712WithModifier.sol";
+import "fhevm/abstracts/EIP712WithModifier.sol";
 import "fhevm/lib/TFHE.sol";
 
 contract EncryptedERC20 is EIP712WithModifier {
